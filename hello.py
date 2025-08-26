@@ -14,5 +14,3 @@ elif marks >= 35:
      print(f"{name}, you have S pass")
 else:
      print(f"{name}, you are fail.")
-
-print("Hello world")

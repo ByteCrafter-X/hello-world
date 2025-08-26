@@ -15,4 +15,4 @@ elif marks >= 35:
 else:
      print(f"{name}, you are fail.")
 
-print("Hello world")
+print("Hello world!")
