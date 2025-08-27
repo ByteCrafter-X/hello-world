@@ -1,18 +1,43 @@
 print("    ___SCHOOL MARKING RESULT PLATFORM___")
+# Define grade boundaries with detailed remarks
+def get_grade(marks):
+    if marks > 100 or marks < 0:
+        return "Invalid input!"
+    elif marks > 90:
+        return "A+ pass (Outstanding)"
+    elif marks > 75:
+        return "A pass (Excellent)"
+    elif marks >= 65:
+        return "B pass (Good)"
+    elif marks >= 55:
+        return "C pass (Credit)"
+    elif marks >= 35:
+        return "S pass (Satisfactory)"
+    else:
+        return "fail (Needs Improvement)"
 
-name = input("enter your name: ")
-marks = int(input("enter Your marks: "))
+# Allow multiple student results
+num_students = int(input("Enter the number of students: "))
 
-if marks > 100 or marks < 0:
-    print("Invalid input!")
-elif marks > 75:
-     print(f"{name}, you have A pass")
-elif marks >= 65:
-    print(f"{name}, you have B pass")
-elif marks >= 55:
-     print(f"{name}, you have C pass")
-elif marks >= 35:
-     print(f"{name}, you have S pass")
-else:
-     print(f"{name}, you are fail.")
+results = []
 
+for i in range(num_students):
+    print(f"\n--- Student {i+1} ---")
+    name = input("Enter your name: ")
+    try:
+        marks = int(input("Enter your marks: "))
+    except ValueError:
+        print("Invalid marks! Please enter an integer.")
+        continue
+
+    grade = get_grade(marks)
+    if grade == "Invalid input!":
+        print(grade)
+    else:
+        print(f"{name}, you have {grade}")
+        results.append((name, marks, grade))
+
+# Optionally print summary at end
+print("\n--- All Students' Results ---")
+for idx, (name, marks, grade) in enumerate(results, 1):
+    print(f"{idx}. {name}: {marks} marks - {grade}")
