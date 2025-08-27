@@ -1,3 +1,5 @@
+print("    ___SCHOOL MARKING RESULT PLATFORM___")
+
 name = input("enter your name: ")
 marks = int(input("enter Your marks: "))
 
