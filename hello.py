@@ -1,9 +1,8 @@
 name = input("enter your name: ")
 marks = int(input("enter Your marks: "))
 
-
 if marks > 100 or marks < 0:
-    print(f"Invalid input! ")
+    print("Invalid input!")
 elif marks > 75:
      print(f"{name}, you have A pass")
 elif marks >= 65:
@@ -14,3 +13,4 @@ elif marks >= 35:
      print(f"{name}, you have S pass")
 else:
      print(f"{name}, you are fail.")
+
